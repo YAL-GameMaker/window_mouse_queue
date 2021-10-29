@@ -1,0 +1,10 @@
+surf = surface_create(room_width, room_height);
+surface_set_target(surf);
+draw_clear_alpha(c_white, 0);
+surface_reset_target();
+xlist = ds_list_create();
+ylist = ds_list_create();
+lastx = 0;
+lasty = 0;
+window_mouse_queue_init();
+room_speed = 10;
