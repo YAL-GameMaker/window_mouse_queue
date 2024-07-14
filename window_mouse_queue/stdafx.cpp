@@ -4,6 +4,9 @@
 
 #include "stdafx.h"
 #include <strsafe.h>
+#ifdef tiny_dtoui3
+#include <intrin.h>
+#endif
 
 #if _WINDOWS
 // http://computer-programming-forum.com/7-vc.net/07649664cea3e3d7.htm

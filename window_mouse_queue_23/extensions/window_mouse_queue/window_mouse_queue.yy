@@ -20,38 +20,40 @@
         {"externalName":"window_mouse_queue_init_raw","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
             1,
           ],"resourceVersion":"1.0","name":"window_mouse_queue_init_raw","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"window_mouse_queue_get_1","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"window_mouse_queue_get_1","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"window_mouse_queue_get_2","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+        {"externalName":"window_mouse_queue_get_count","kind":1,"help":"window_mouse_queue_get_count()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"window_mouse_queue_get_count","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"window_mouse_queue_get_data","kind":11,"help":"","hidden":true,"returnType":2,"argCount":2,"args":[
             1,
-          ],"resourceVersion":"1.0","name":"window_mouse_queue_get_2","tags":[],"resourceType":"GMExtensionFunction",},
+            2,
+          ],"resourceVersion":"1.0","name":"window_mouse_queue_get_data","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"window_mouse_queue_get_x","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"window_mouse_queue_get_x","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"window_mouse_queue_get_y","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"window_mouse_queue_get_y","tags":[],"resourceType":"GMExtensionFunction",},
+        {"externalName":"window_mouse_queue_get_time","kind":11,"help":"","hidden":true,"returnType":2,"argCount":1,"args":[
+            2,
+          ],"resourceVersion":"1.0","name":"window_mouse_queue_get_time","tags":[],"resourceType":"GMExtensionFunction",},
         {"externalName":"window_mouse_queue_clear","kind":1,"help":"window_mouse_queue_clear()","hidden":false,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"window_mouse_queue_clear","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[
-        
-      ],"ProxyFiles":[
+      ],"constants":[],"ProxyFiles":[
         {"name":"window_mouse_queue_x64.dll","tags":[],"resourceVersion":"1.0","resourceType":"GMProxyFile","TargetMask":6,},
       ],"copyToTargets":9223372036854775807,"order":[
         {"name":"window_mouse_queue_init_raw","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
-        {"name":"window_mouse_queue_get_1","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
-        {"name":"window_mouse_queue_get_2","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
+        {"name":"window_mouse_queue_get_count","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
+        {"name":"window_mouse_queue_get_data","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
+        {"name":"window_mouse_queue_get_x","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
+        {"name":"window_mouse_queue_get_y","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
+        {"name":"window_mouse_queue_get_time","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
         {"name":"window_mouse_queue_clear","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
     {"filename":"window_mouse_queue.gml","origname":"extensions\\gml.gml","init":"","final":"","kind":2,"uncompress":false,"functions":[
         {"externalName":"window_mouse_queue_init","kind":11,"help":"","hidden":true,"returnType":2,"argCount":0,"args":[],"resourceVersion":"1.0","name":"window_mouse_queue_init","tags":[],"resourceType":"GMExtensionFunction",},
-        {"externalName":"window_mouse_queue_get","kind":2,"help":"window_mouse_queue_get(xlist:ds_list<number>, ylist:ds_list<number>)->int","hidden":false,"returnType":2,"argCount":2,"args":[
-            2,
-            2,
-          ],"resourceVersion":"1.0","name":"window_mouse_queue_get","tags":[],"resourceType":"GMExtensionFunction",},
-      ],"constants":[
-        
-      ],"ProxyFiles":[],"copyToTargets":9223372036854775807,"order":[
+        {"externalName":"window_mouse_queue_get","kind":2,"help":"window_mouse_queue_get(xlist:ds_list<number>, ylist:ds_list<number>, ?timelist:ds_list<number>)->int","hidden":false,"returnType":2,"argCount":-1,"args":[],"resourceVersion":"1.0","name":"window_mouse_queue_get","tags":[],"resourceType":"GMExtensionFunction",},
+      ],"constants":[],"ProxyFiles":[],"copyToTargets":9223372036854775807,"order":[
         {"name":"window_mouse_queue_init","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
         {"name":"window_mouse_queue_get","path":"extensions/window_mouse_queue/window_mouse_queue.yy",},
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
-    {"filename":"autogen.gml","origname":"extensions\\autogen.gml","init":"","final":"","kind":2,"uncompress":false,"functions":[
-        
-      ],"constants":[
-        
-      ],"ProxyFiles":[],"copyToTargets":-1,"order":[
+    {"filename":"autogen.gml","origname":"extensions\\autogen.gml","init":"","final":"","kind":2,"uncompress":false,"functions":[],"constants":[],"ProxyFiles":[],"copyToTargets":-1,"order":[
         
       ],"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMExtensionFile",},
   ],

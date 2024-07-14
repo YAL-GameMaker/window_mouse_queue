@@ -6,6 +6,10 @@
 */extensions/*/*.dll
 */datafiles/window_mouse_queue.html
 
+window_mouse_queue_gmk/*.cpp
+window_mouse_queue_gmk/*.dll
+window_mouse_queue_gmk/window_mouse_queue.html
+
 */Debug/
 */Release/
 Debug/

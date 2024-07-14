@@ -31,9 +31,11 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\trace.gml</script>
+    <script>scripts\array.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_test</font>
+    <font>fonts\fnt_small</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_test</object>

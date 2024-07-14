@@ -1,6 +1,6 @@
 @echo off
 
-if not exist "window_mouse_queue-for-GMS1" mkdir "window_mouse_queue-for-GMS1"
+if not exist "window_mouse_queue-for-GMS1" mkdir "window_mouse_queue-for-GMS1\window_mouse_queue\Assets\datafiles"
 cmd /C copyre ..\window_mouse_queue.gmx\extensions\window_mouse_queue.extension.gmx window_mouse_queue-for-GMS1\window_mouse_queue.extension.gmx
 cmd /C copyre ..\window_mouse_queue.gmx\extensions\window_mouse_queue window_mouse_queue-for-GMS1\window_mouse_queue
 cmd /C copyre ..\window_mouse_queue.gmx\datafiles\window_mouse_queue.html window_mouse_queue-for-GMS1\window_mouse_queue\Assets\datafiles\window_mouse_queue.html
@@ -28,5 +28,9 @@ cd window_mouse_queue-for-GMS2.3+
 cmd /C 7z a window_mouse_queue-for-GMS2.3+.zip *
 move /Y window_mouse_queue-for-GMS2.3+.zip ../window_mouse_queue-for-GMS2.3+.yymps
 cd ..
+
+del /Q window_mouse_queue-demo-for-GMS2.3+.zip
+cd ..\window_mouse_queue_demo_23
+cmd /C 7z a ..\export\window_mouse_queue-demo-for-GMS2.3+.zip *
 
 pause

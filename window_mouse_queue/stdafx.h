@@ -76,4 +76,7 @@ public:
 		}
 		arr[len++] = val;
 	}
+	T operator[](size_t index) {
+		return arr[index];
+	}
 };

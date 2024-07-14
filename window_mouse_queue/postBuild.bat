@@ -9,12 +9,17 @@ echo Running post-build for %config%
 
 set extName=window_mouse_queue
 set dllName=window_mouse_queue
+
+set gmlDir8=%solutionDir%%extName%_gmk
 set gmlDir14=%solutionDir%window_mouse_queue.gmx
 set gmlDir22=%solutionDir%window_mouse_queue_yy
 set gmlDir23=%solutionDir%window_mouse_queue_23
+
+set ext8=%gmlDir8%
 set ext14=%gmlDir14%\extensions\%extName%
 set ext22=%gmlDir22%\extensions\%extName%
 set ext23=%gmlDir23%\extensions\%extName%
+
 set dllRel=%dllName%.dll
 set cppRel=%dllName%.cpp
 set cppPath=%ext23%\%cppRel%
@@ -23,9 +28,13 @@ set docName=%extName%.html
 set docPath=%solutionDir%export\%docName%
 
 echo Copying documentation...
+if not exist "%gmlDir23%\datafiles" mkdir "%gmlDir23%\datafiles"
 copy /Y %docPath% %gmlDir23%\datafiles\%docName%
+if not exist "%gmlDir22%\datafiles" mkdir "%gmlDir22%\datafiles"
 copy /Y %docPath% %gmlDir22%\datafiles\%docName%
+if not exist "%gmlDir14%\datafiles" mkdir "%gmlDir14%\datafiles"
 copy /Y %docPath% %gmlDir14%\datafiles\%docName%
+copy /Y %docPath% %gmlDir8%\%docName%
 
 where /q gmxgen
 if %ERRORLEVEL% EQU 0 (
@@ -47,6 +56,16 @@ if %ERRORLEVEL% EQU 0 (
 	--copy "%dllPath%" "%dllRel%:%arch%" ^
 	--copy "%cppPath%" "%cppRel%" ^
 	--copy "%gmlPath%" "*.gml"
+
+	gmxgen "%ext8%\%extName%.gmxgen81" ^
+	--copy "%dllPath%" "%dllRel%:%arch%" ^
+	--copy "%dllPath%" "%dllRel%:%arch%" ^
+	--copy "%cppPath%" "%cppRel%" ^
+	--copy "%ext23%\%extName%.gml" "%extName%_core.gml" ^
+	--gmk-loader %extName%_init_dll ^
+	--strip-cc --disable-incompatible
+
+	del /Q "%ext8%\%extName%_core.gml"
 
 ) else (
 

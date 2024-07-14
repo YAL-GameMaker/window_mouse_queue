@@ -3,5 +3,41 @@
 ```set autoapi ext```
 ```set intro
 This is a "cheat sheet" for "window_mouse_queue" extension by YellowAfterlife.
-The extension can be found on [itch.io](https://yellowafterlife.itch.io/gamemaker-window_mouse_queue).
+
+The extension can be found on
+[itch.io](https://yellowafterlife.itch.io/gamemaker-window-mouse-queue)
+
+The source code can be found on
+[GitHub](https://github.com/YAL-GameMaker/window_mouse_queue).
 ```
+
+#[window_mouse_queue_init()]() {
+    Call before using other functions!
+}
+#[window_mouse_queue_get(xlist, ylist, ?timelist)->]() {
+    Adds mouse coordinates since the last call to the two provided `ds_lists`.
+    
+    `timelist` (optional) is populated with
+    [timestamps of unspecific precision](https://learn.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-mousemovepoint).
+    
+    Returns the number of items added.
+    
+    Note that this does not clear the lists before adding new items!
+}
+#[window_mouse_queue_clear()]() {
+    Discards the accumulated coordinates without returning them.
+    
+    If you aren't going to do anything with coordinates for this frame, you should call this function to avoid coordinate build-up.
+}
+#[window_mouse_queue_get_count()->]() {
+    Returns the number of position currently in the queue.
+}
+#[window_mouse_queue_get_x(ind)->]() {
+    Returns X coordinate of a position in the queue.
+}
+#[window_mouse_queue_get_y(ind)->]() {
+    Returns Y coordinate of a position in the queue.
+}
+#[window_mouse_queue_get_time(ind)->]() {
+    Returns the timestamp of a position in the queue.
+}

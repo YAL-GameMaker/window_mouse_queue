@@ -59,23 +59,57 @@
           </args>
         </function>
         <function>
-          <name>window_mouse_queue_get_1</name>
-          <externalName>window_mouse_queue_get_1</externalName>
-          <kind>11</kind>
-          <help></help>
+          <name>window_mouse_queue_get_count</name>
+          <externalName>window_mouse_queue_get_count</externalName>
+          <kind>1</kind>
+          <help>window_mouse_queue_get_count()</help>
           <returnType>2</returnType>
           <argCount>0</argCount>
           <args/>
         </function>
         <function>
-          <name>window_mouse_queue_get_2</name>
-          <externalName>window_mouse_queue_get_2</externalName>
+          <name>window_mouse_queue_get_data</name>
+          <externalName>window_mouse_queue_get_data</externalName>
+          <kind>11</kind>
+          <help></help>
+          <returnType>2</returnType>
+          <argCount>2</argCount>
+          <args>
+            <arg>1</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>window_mouse_queue_get_x</name>
+          <externalName>window_mouse_queue_get_x</externalName>
           <kind>11</kind>
           <help></help>
           <returnType>2</returnType>
           <argCount>1</argCount>
           <args>
-            <arg>1</arg>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>window_mouse_queue_get_y</name>
+          <externalName>window_mouse_queue_get_y</externalName>
+          <kind>11</kind>
+          <help></help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
+          </args>
+        </function>
+        <function>
+          <name>window_mouse_queue_get_time</name>
+          <externalName>window_mouse_queue_get_time</externalName>
+          <kind>11</kind>
+          <help></help>
+          <returnType>2</returnType>
+          <argCount>1</argCount>
+          <args>
+            <arg>2</arg>
           </args>
         </function>
         <function>
@@ -117,13 +151,10 @@
           <name>window_mouse_queue_get</name>
           <externalName>window_mouse_queue_get</externalName>
           <kind>2</kind>
-          <help>window_mouse_queue_get(xlist:ds_list&lt;number&gt;, ylist:ds_list&lt;number&gt;)-&gt;int</help>
+          <help>window_mouse_queue_get(xlist:ds_list&lt;number&gt;, ylist:ds_list&lt;number&gt;, ?timelist:ds_list&lt;number&gt;)-&gt;int</help>
           <returnType>2</returnType>
-          <argCount>2</argCount>
-          <args>
-            <arg>2</arg>
-            <arg>2</arg>
-          </args>
+          <argCount>-1</argCount>
+          <args/>
         </function>
       </functions>
       <constants/>

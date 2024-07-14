@@ -25,7 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>// Mouse queue stuff
+window_mouse_queue_init();
+xList = ds_list_create();
+yList = ds_list_create();
+tList = ds_list_create();
+
+// List of points to render
+pointList = ds_list_create(); // List of [x,y,col]
+</string>
           </argument>
         </arguments>
       </action>
@@ -69,8 +77,75 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_test);
+            <string>draw_set_font(fnt_small);
 draw_set_color(c_white);
+var _scale = 3;
+
+// If mouse is down (drawing)
+if mouse_check_button(mb_left)
+    {
+    // If stroke started this frame
+    if mouse_check_button_pressed(mb_left)
+        {
+        // Clear previous line
+        ds_list_clear(pointList);
+        }
+    
+    // Import new queued mouse positions for this step
+    ds_list_clear(xList);
+    ds_list_clear(yList);
+    ds_list_clear(tList);
+    window_mouse_queue_get(xList,yList,tList);
+
+    // Add them all to the render list
+    var i = 0; 
+    repeat ds_list_size(xList)
+        {
+        // Read next entry
+        var px = ds_list_find_value(xList,i);
+        var py = ds_list_find_value(yList,i);
+        var pt = ds_list_find_value(tList,i);
+        
+        // Make first point green
+        var c = c_red; if i == 0 c = c_green;
+        
+        // Add to point list
+        ds_list_add(pointList,array(px,py,c,pt));
+        
+        // Progress
+        i++;
+        }
+    }
+    
+// Clear backlog for next step
+window_mouse_queue_clear();
+
+// Draw stroke so far
+draw_set_alpha(0.5); // To see overlapping arrows better, make them translucent
+var i = 0;
+var p0 = ds_list_find_value(pointList,0);
+repeat ds_list_size(pointList)
+    {
+    // Read next point
+    var p1 = ds_list_find_value(pointList,i);
+    
+    // Draw arrow between points
+    draw_set_colour(p0[2]);
+    draw_arrow(p0[0] * _scale,p0[1] * _scale,p1[0] * _scale,p1[1] * _scale,40);
+    
+    // Transfer
+    p0 = p1;
+    
+    // Progress
+    i++;
+    }
+
+draw_set_color(c_white);
+for (i = 0; i &lt; ds_list_size(pointList); i += 1) {
+    var p0 = pointList[|i]
+    draw_text(p0[0] * _scale, p0[1] * _scale, string(p0[3]));
+}
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

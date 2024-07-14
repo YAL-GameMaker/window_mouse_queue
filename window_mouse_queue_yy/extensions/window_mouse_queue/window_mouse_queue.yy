@@ -53,33 +53,79 @@
                     "returnType": 2
                 },
                 {
-                    "id": "ab7013f9-e0ed-3478-d198-29a8231b28b5",
+                    "id": "2d3d2066-808e-5b2f-bd97-e95d69f9dd00",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 0,
                     "args": [
                         
                     ],
-                    "externalName": "window_mouse_queue_get_1",
-                    "help": "",
-                    "hidden": true,
-                    "kind": 11,
-                    "name": "window_mouse_queue_get_1",
+                    "externalName": "window_mouse_queue_get_count",
+                    "help": "window_mouse_queue_get_count()",
+                    "hidden": false,
+                    "kind": 1,
+                    "name": "window_mouse_queue_get_count",
                     "returnType": 2
                 },
                 {
-                    "id": "790f16c7-438b-0870-c9dd-d363d84e9a91",
+                    "id": "159efdbd-30ed-9edf-a354-71255107e497",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 2,
+                    "args": [
+                        1,
+                        2
+                    ],
+                    "externalName": "window_mouse_queue_get_data",
+                    "help": "",
+                    "hidden": true,
+                    "kind": 11,
+                    "name": "window_mouse_queue_get_data",
+                    "returnType": 2
+                },
+                {
+                    "id": "0f1f0244-c4ca-1f0d-9fb5-ad1926604492",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
                     "argCount": 1,
                     "args": [
-                        1
+                        2
                     ],
-                    "externalName": "window_mouse_queue_get_2",
+                    "externalName": "window_mouse_queue_get_x",
                     "help": "",
                     "hidden": true,
                     "kind": 11,
-                    "name": "window_mouse_queue_get_2",
+                    "name": "window_mouse_queue_get_x",
+                    "returnType": 2
+                },
+                {
+                    "id": "51dab99f-10ed-f8bb-ec10-3748ea41824a",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 1,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "window_mouse_queue_get_y",
+                    "help": "",
+                    "hidden": true,
+                    "kind": 11,
+                    "name": "window_mouse_queue_get_y",
+                    "returnType": 2
+                },
+                {
+                    "id": "d3f025f4-7e94-6e18-862f-f1834e2e58b1",
+                    "modelName": "GMExtensionFunction",
+                    "mvc": "1.0",
+                    "argCount": 1,
+                    "args": [
+                        2
+                    ],
+                    "externalName": "window_mouse_queue_get_time",
+                    "help": "",
+                    "hidden": true,
+                    "kind": 11,
+                    "name": "window_mouse_queue_get_time",
                     "returnType": 2
                 },
                 {
@@ -139,13 +185,12 @@
                     "id": "47f4c555-faba-0c31-40d9-af9fe89a1d70",
                     "modelName": "GMExtensionFunction",
                     "mvc": "1.0",
-                    "argCount": 2,
+                    "argCount": -1,
                     "args": [
-                        2,
-                        2
+                        
                     ],
                     "externalName": "window_mouse_queue_get",
-                    "help": "window_mouse_queue_get(xlist:ds_list<number>, ylist:ds_list<number>)->int",
+                    "help": "window_mouse_queue_get(xlist:ds_list<number>, ylist:ds_list<number>, ?timelist:ds_list<number>)->int",
                     "hidden": false,
                     "kind": 2,
                     "name": "window_mouse_queue_get",

@@ -5,6 +5,8 @@ if (mouse_check_button(mb_right)) {
     draw_clear_alpha(c_white, 0);
     surface_reset_target();
 }
+var x1 = window_mouse_get_x();
+var y1 = window_mouse_get_y();
 if (mouse_check_button(mb_left)) {
     ds_list_clear(xlist);
     ds_list_clear(ylist);
@@ -13,22 +15,24 @@ if (mouse_check_button(mb_left)) {
     surface_set_target(surf);
     for (var i = 0; i < n; i++) {
         //trace(i, xlist[|i], ylist[|i]);
-        var xp, yp;
+        var x0, y0;
         if (i == 0) {
-            xp = lastx;
-            yp = lasty;
+            x0 = lastx;
+            y0 = lasty;
         } else {
-            xp = xlist[|i - 1];
-            yp = ylist[|i - 1];
+            x0 = xlist[|i - 1];
+            y0 = ylist[|i - 1];
         }
-        draw_arrow(xp, yp, xlist[|i], ylist[|i], 7);
+        x1 = xlist[|i];
+        y1 = ylist[|i];
+        draw_arrow(x0, y0, x1, y1, 7);
         //draw_circle(xlist[|i], ylist[|i], 3, true);
     }
     draw_circle(mouse_x, mouse_y, 5, true);
     surface_reset_target();
     draw_text(5, 5, n);
 } else window_mouse_queue_clear();
-lastx = window_mouse_get_x();
-lasty = window_mouse_get_y();
+lastx = x1;
+lasty = y1;
 
 draw_surface(surf, 0, 0);
